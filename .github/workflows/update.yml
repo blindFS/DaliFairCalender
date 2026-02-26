@@ -3,7 +3,12 @@ name: Update Calendar
 on:
   schedule:
     - cron: '0 0 1 1 *' 
-  workflow_dispatch: 
+  push:
+    branches:
+      - main
+    paths:
+    - 'generate_calendar.py'
+  workflow_dispatch:
 
 permissions:
   contents: write
